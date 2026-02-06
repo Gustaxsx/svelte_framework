@@ -15,9 +15,8 @@
         if (dogs.code != 404) {
             setListDogs(dogs);
         } else {
-            alert('Nenhuma raça encontrada!')
+            alert("Nenhuma raça encontrada!");
         }
-        
     }
 
     function setListDogs(dogs) {
