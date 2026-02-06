@@ -2,6 +2,7 @@
     import { page } from "$app/stores";
     import src from "$lib/assets/search.png";
     import logPet from "$lib/assets/pedePetLog.png";
+    import favIcon from "$lib/assets/favicon-32x32.png";
 
     let race = $page.url.searchParams.get("race");
     let listDogs = [];
@@ -17,18 +18,19 @@
     function setListDogs(dogs) {
         listDogs = dogs;
     }
-    console.log(race);
+    
     getDog();
 </script>
 
 <svelte:head>
-    <title>Result</title>
+    <title>Pede Pet | Raça</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
         href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Kristi&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet"
     />
+    <link rel="shortcut icon" href="{favIcon}" type="image/x-icon">
 </svelte:head>
 
 <header>
@@ -165,5 +167,20 @@
         height: 100%;
         border-top-right-radius: 15px;
         border-bottom-right-radius: 15px;
+    }
+
+    @media (min-width: 1280px) {
+        .containerHeader {
+            flex-direction: row;
+            justify-content: start;
+            padding-left: 60px;
+            padding-bottom: 10px;
+        }
+
+        span {
+            display: flex;
+            justify-content: center;
+            width: calc(100% - 250px);
+        }
     }
 </style>
